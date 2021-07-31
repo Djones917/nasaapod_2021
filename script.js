@@ -18,3 +18,6 @@ async function getNasaPictures() {
 
     }
 }
+
+// On Load
+getNasaPictures();
