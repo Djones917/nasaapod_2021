@@ -15,6 +15,14 @@ let resultsArray = [];
 function updateDOM() {
   resultsArray.forEach((result) => {
      // Card Container
+     const card = document.createElement('div');
+     card.classList.add('card');
+     // Link
+     const link = document.createElement('a');
+     link.href = result.hdurl;
+     link.title = 'View Full Image';
+     link.target = '_blank';
+     // Image
      
   });
 }
