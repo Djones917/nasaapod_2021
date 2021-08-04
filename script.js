@@ -23,7 +23,11 @@ function updateDOM() {
      link.title = 'View Full Image';
      link.target = '_blank';
      // Image
-     
+     const image = document.createElement('img');
+     image.src = result.url;
+     image.alt = 'NASA Picture Of The Day';
+     image.loading = 'lazy';
+     image.classList.add('card-img-top');
   });
 }
 
