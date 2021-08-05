@@ -28,6 +28,7 @@ function updateDOM() {
      image.alt = 'NASA Picture Of The Day';
      image.loading = 'lazy';
      image.classList.add('card-img-top');
+     // Card Body
   });
 }
 
