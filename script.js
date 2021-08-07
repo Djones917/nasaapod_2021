@@ -42,6 +42,15 @@ function updateDOM() {
      // Card Text
      const cardText = document.createElement('p');
      cardText.textContent = result.explanation;
+     // Footer Container
+     const footer = document.createElement('small');
+     footer.classList.add('text-muted');
+     // Date
+     const date = document.createElement('strong');
+     date.textContent = result.date;
+     // Copyright
+     const copyright = document.createElement('span');
+     copyright.textContent = ` ${result.copyright}`;
   });
 }
 
