@@ -40,6 +40,8 @@ function updateDOM() {
      saveText.classList.add('clickable');
      saveText.textContent = 'Add To Favorites';
      // Card Text
+     const cardText = document.createElement('p');
+     cardText.textContent = result.explanation;
   });
 }
 
