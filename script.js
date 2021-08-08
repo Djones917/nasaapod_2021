@@ -49,11 +49,15 @@ function updateDOM() {
      const date = document.createElement('strong');
      date.textContent = result.date;
      // Copyright
+     const copyrightResult = result.copyright === undefined ? '' : result.copyright;
      const copyright = document.createElement('span');
-     copyright.textContent = ` ${result.copyright}`;
+     copyright.textContent = ` ${copyrightResult}`;
      // Apend
      footer.append(date, copyright);
-     cardBody.append(cardTitle, cardText, saveText, footer);
+     cardBody.append(cardTitle, saveText, cardText, footer);
+     link.appendChild(image);
+     card.append(link, cardBody);
+     imagesContainer.appendChild(card);
   });
 }
 
