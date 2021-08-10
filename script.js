@@ -40,7 +40,7 @@ function updateDOM() {
      const saveText = document.createElement('p');
      saveText.classList.add('clickable');
      saveText.textContent = 'Add To Favorites';
-     saveText.onclick = `saveFavorite('${result.url}')`;
+     saveText.setAttribute('onclick', `saveFavorite('${result.url}')`);
      // Card Text
      const cardText = document.createElement('p');
      cardText.textContent = result.explanation;
@@ -78,7 +78,13 @@ async function getNasaPictures() {
 
 // Add Result To Favorites
 function saveFavorite(itemUrl) {
-  console.log(itemUrl);
+  // Loop through Results Array to select Favorite
+  resultsArray.forEach((item) => {
+     if (item.url.includes(itemUrl)) {
+       favorites[itemUrl] = item;
+       console.log(favorites);
+     }
+  });
 }
 
 // On Load
