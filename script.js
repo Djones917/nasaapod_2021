@@ -66,6 +66,11 @@ function createDOMNodes() {
 
 
 function updateDOM() {
+  // Get Favorites From Local Storage
+  if (localStorage.getItem('nasaFavorites')) {
+    favorites = JSON.parse(localStorage.getItem('nasaFavorites'));
+    console.log('Favorites from local storage', favorites);
+  }
   createDOMNodes();
 }
 
@@ -74,8 +79,7 @@ function updateDOM() {
 async function getNasaPictures() {
     try {
       const response = await fetch(apiUrl);
-      resultsArray = await response.json();
-      console.log(resultsArray);
+      resultsArray = await response.json();      
       updateDOM();
     } catch (error) {
     // Catch error here
