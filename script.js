@@ -14,7 +14,7 @@ let resultsArray = [];
 let favorites = {};
 
 
-function createDOMNodes() {
+function createDOMNodes(page) {
   resultsArray.forEach((result) => {
     // Card Container
     const card = document.createElement('div');
@@ -65,13 +65,13 @@ function createDOMNodes() {
 }
 
 
-function updateDOM() {
+function updateDOM(page) {
   // Get Favorites From Local Storage
   if (localStorage.getItem('nasaFavorites')) {
     favorites = JSON.parse(localStorage.getItem('nasaFavorites'));
     console.log('Favorites from local storage', favorites);
   }
-  createDOMNodes();
+  createDOMNodes(page);
 }
 
 
@@ -80,7 +80,7 @@ async function getNasaPictures() {
     try {
       const response = await fetch(apiUrl);
       resultsArray = await response.json();      
-      updateDOM();
+      updateDOM('favorites');
     } catch (error) {
     // Catch error here
 
