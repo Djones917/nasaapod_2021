@@ -15,6 +15,7 @@ let favorites = {};
 
 
 function createDOMNodes(page) {
+  console.log(page);
   resultsArray.forEach((result) => {
     // Card Container
     const card = document.createElement('div');
