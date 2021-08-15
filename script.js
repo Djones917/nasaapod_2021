@@ -15,8 +15,9 @@ let favorites = {};
 
 
 function createDOMNodes(page) {
-  console.log(page);
-  resultsArray.forEach((result) => {
+  const currentArray = page === 'results' ? resultsArray : Object.values(favorites);
+  console.log('Current Array', page, currentArray);
+  currentArray.forEach((result) => {
     // Card Container
     const card = document.createElement('div');
     card.classList.add('card');
